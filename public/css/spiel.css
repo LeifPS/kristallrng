@@ -224,3 +224,23 @@ html.wenig .beben { animation: none; }
   .funk, .glanz, .m-regenbogen, .aura.puls, .stein.ruhe .kr-svg, .stein.schweben .kr-svg, .beben { animation: none; }
   .funk { opacity: .9; }
 }
+
+/* Kristall-Besonderheiten (große Darstellung) */
+@keyframes kr-dreh { to { transform: rotate(360deg); } }
+@keyframes kr-puls { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
+@keyframes kr-flacker { 0%, 100% { transform: scale(1, 1); opacity: .85; } 40% { transform: scale(1.04, 1.1); opacity: 1; } 70% { transform: scale(.97, .94); opacity: .8; } }
+@keyframes kr-lava { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+@keyframes kr-schimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes kr-rauch { 0%, 100% { transform: translateY(0); opacity: .8; } 50% { transform: translateY(-3px); opacity: 1; } }
+@keyframes kr-blink { 0%, 100% { opacity: .8; } 50% { opacity: 1; } }
+.kr-dreh { transform-origin: 50px 50px; animation: kr-dreh 18s linear infinite; }
+.kr-puls { animation: kr-puls 2.2s ease-in-out infinite; }
+.kr-flacker { transform-box: fill-box; transform-origin: 50% 100%; animation: kr-flacker 1.3s ease-in-out infinite; }
+.kr-lava { animation: kr-lava 2.6s ease-in-out infinite; }
+.kr-schimmer { animation: kr-schimmer 3.2s ease-in-out infinite; }
+.kr-rauch { animation: kr-rauch 3.6s ease-in-out infinite; }
+.kr-blink { animation: kr-blink 2.4s ease-in-out infinite; }
+html.wenig .kr-dreh, html.wenig .kr-puls, html.wenig .kr-flacker, html.wenig .kr-lava, html.wenig .kr-schimmer, html.wenig .kr-rauch, html.wenig .kr-blink { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .kr-dreh, .kr-puls, .kr-flacker, .kr-lava, .kr-schimmer, .kr-rauch, .kr-blink { animation: none; }
+}
