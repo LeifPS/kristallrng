@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+<script src="lgh-vorlade.js"></script><!--lgh-->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#070b16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kristall RNG">
+<title>Kristall RNG</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/spiel.css">
+</head>
+<body>
+<div id="app">
+  <div class="bg" id="bgA"></div><div class="bg" id="bgB"></div>
+  <canvas id="fx"></canvas>
+  <header id="kopf">
+    <div class="pille" id="p-splitter" title="Splitter"></div>
+    <div class="pille" id="p-gluck" title="Glück"></div>
+    <button class="rund" id="b-einst" type="button" aria-label="Einstellungen">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>
+    </button>
+  </header>
+  <div id="band" role="status" aria-live="off"></div>
+  <main id="haupt">
+    <section class="ansicht" id="v-schuerfen" aria-label="Schürfen"></section>
+    <section class="ansicht" id="v-sammlung" aria-label="Sammlung" hidden></section>
+    <section class="ansicht" id="v-rucksack" aria-label="Rucksack" hidden></section>
+    <section class="ansicht" id="v-werkstatt" aria-label="Werkstatt" hidden></section>
+    <section class="ansicht" id="v-erfolge" aria-label="Erfolge" hidden></section>
+  </main>
+  <nav id="nav" aria-label="Bereiche"></nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="ansage" aria-hidden="true"></div>
+  <div id="blitz" aria-hidden="true"></div>
+  <div id="sr" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-live="polite"></div>
+</div>
+<script src="js/daten.js"></script>
+<script src="js/kern.js"></script>
+<script src="js/kunst.js"></script>
+<script src="js/ton.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/ansichten.js"></script>
+<!--lgh-start--><script>window.LGH_SPIEL='kristallrng';window.LGH_POS='bc';window.LGH_EIGENER_KNOPF=true;</script><script src="lgh-modul.js"></script><!--lgh-ende-->
+</body>
+</html>
