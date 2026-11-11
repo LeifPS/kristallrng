@@ -120,26 +120,26 @@
   /* ---------- Verbesserungen ---------- */
   function z(x) { return x; }
   KR.UPS = [
-    { id: 'gluck', name: 'Glücksstern', max: 80, basis: 60, f: 1.22,
+    { id: 'gluck', name: 'Glücksstern', max: 80, basis: 60, f: 1.26,
       text: 'Mehr Glück bei jedem Schlag.', wirk: function (l) { return '+' + (l * 10) + ' % Glück'; } },
-    { id: 'tempo', name: 'Flinke Hacke', max: 25, basis: 80, f: 1.32,
+    { id: 'tempo', name: 'Flinke Hacke', max: 25, basis: 300, f: 1.4,
       text: 'Verkürzt das Aufbrechen eines Steins.', wirk: function (l) { return KR.fmtZeit(KR.aufbruchZeit(l)) + ' pro Schlag'; } },
     { id: 'auto', name: 'Automatik', max: 1, basis: 400, f: 1,
       text: 'Schürft von selbst weiter. Schalter auf der Schürf-Seite.', wirk: function (l) { return l ? 'freigeschaltet' : 'gesperrt'; } },
-    { id: 'takt', name: 'Auto-Takt', max: 20, basis: 300, f: 1.38, braucht: 'auto',
+    { id: 'takt', name: 'Auto-Takt', max: 20, basis: 1200, f: 1.5, braucht: 'auto',
       text: 'Die Automatik schlägt schneller zu.', wirk: function (l) { return KR.fmtZeit(KR.autoTakt(l)) + ' Takt'; } },
-    { id: 'mut', name: 'Mutationsgespür', max: 30, basis: 120, f: 1.30,
+    { id: 'mut', name: 'Mutationsgespür', max: 30, basis: 1500, f: 1.38,
       text: 'Mutationen treten häufiger auf.', wirk: function (l) { return '+' + (l * 8) + ' % Mutationschance'; } },
-    { id: 'muehle', name: 'Splitter-Mühle', max: 40, basis: 100, f: 1.27,
+    { id: 'muehle', name: 'Splitter-Mühle', max: 40, basis: 1000, f: 1.34,
       text: 'Beim Zermahlen entstehen mehr Splitter.', wirk: function (l) { return '+' + (l * 15) + ' % Splitter'; } },
-    { id: 'doppel', name: 'Mehrfachschlag', max: 9, basis: 2500, f: 2.1,
+    { id: 'doppel', name: 'Mehrfachschlag', max: 9, basis: 40000, f: 2.4,
       text: 'Jeder Schlag bricht mehrere Steine auf. Du siehst den besten.', wirk: function (l) { return (l + 1) + (l ? ' Steine' : ' Stein') + ' pro Schlag'; } },
-    { id: 'sortier', name: 'Sortiermaschine', max: 1, basis: 1500, f: 1,
+    { id: 'sortier', name: 'Sortiermaschine', max: 1, basis: 6000, f: 1,
       text: 'Zermahlt Doppelte auf Wunsch von selbst (Schalter im Rucksack).', wirk: function (l) { return l ? 'freigeschaltet' : 'gesperrt'; } },
-    { id: 'nacht', name: 'Nachtschicht', max: 15, basis: 900, f: 1.5, braucht: 'auto',
+    { id: 'nacht', name: 'Nachtschicht', max: 15, basis: 8000, f: 1.7, braucht: 'auto',
       text: 'Die Automatik arbeitet auch, wenn das Spiel zu ist (länger und ergiebiger).',
       wirk: function (l) { return Math.min(95, 20 + l * 5) + ' % Leistung, bis ' + (2 + l * 0.5).toString().replace('.', ',') + ' Std.'; } },
-    { id: 'kompass', name: 'Höhlenkompass', max: 10, basis: 1200, f: 1.6,
+    { id: 'kompass', name: 'Höhlenkompass', max: 10, basis: 15000, f: 1.9,
       text: 'Verstärkt den Bonus der Höhlen und zeigt die nächste Höhle.', wirk: function (l) { return 'Höhlenbonus ×' + (4 + l * 0.8).toString().replace('.', ','); } }
   ];
   KR.UPI = {}; KR.UPS.forEach(function (u) { KR.UPI[u.id] = u; });
